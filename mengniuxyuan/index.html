@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="蒙牛X元神官方联动页面。探索蒙牛与元神IP的深度合作，体验蒙牛经典乳品与元神主题包装的碰撞。获取联名限定产品信息、购买指南及品牌故事。">
+    <meta name="keywords" content="蒙牛X元神, 蒙牛元神, 元神联名, 蒙牛乳业, 元神游戏, 限定产品">
+    <title>蒙牛X元神-深度联动与限定产品首发指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-blue: #1a73e8;
+            --primary-purple: #7c4dff;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-gold: #ffd700;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-purple);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(124, 77, 255, 0.3);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(124, 77, 255, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #2a1b3d 0%, var(--dark-bg) 70%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 0 30px rgba(124, 77, 255, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Features Section */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, #b0b0b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(124, 77, 255, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Products Showcase */
+        .products-section {
+            background: linear-gradient(to bottom, var(--dark-bg), #1a1a2e);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background-color: #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 80%;
+            max-width: 200px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent-gold);
+            color: #000;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .buy-btn {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .buy-btn:hover {
+            color: var(--primary-purple);
+        }
+
+        /* Story/About Section */
+        .story-section {
+            background: var(--dark-bg);
+            display: flex;
+            align-items: center;
+        }
+
+        .story-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-image {
+            position: relative;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: -20px 20px 0 rgba(124, 77, 255, 0.1);
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .story-list svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary-purple);
+            flex-shrink: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: #161616;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question {
+            padding: 1.5rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-purple);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-secondary);
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--text-main);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+
+            .story-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .story-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>蒙牛</span><span style="color:#fff">X</span><span>元神</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features">合作亮点</a></li>
+                    <li><a href="#products">联名产品</a></li>
+                    <li><a href="#story">品牌故事</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#products" class="cta-btn">立即选购</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-tags">
+                    <span class="tag">限定包装</span>
+                    <span class="tag">全球首发</span>
+                    <span class="tag">营养升级</span>
+                </div>
+                <h1>打破次元壁<br>蒙牛 × 元神</h1>
+                <p>当国民乳品遇见国民级游戏，我们将“纯真”与“热血”完美融合。探索全新元神主题包装，品味每一口纯正营养。</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="#products" class="cta-btn" style="padding: 0.8rem 2rem; font-size: 1rem;">查看产品</a>
+                    <a href="#story" style="padding: 0.8rem 2rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 50px; color: white;">了解合作</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>为什么选择这次联名？</h2>
+                    <p>不仅仅是包装的更换，更是品质与精神的共鸣。</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <span class="feature-icon">🎨</span>
+                        <h3>独家IP设计</h3>
+                        <p>邀请元神顶级美术团队参与设计，呈现游戏内经典角色的立体形象与标志性场景，细节之处尽显匠心。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">🥛</span>
+                        <h3>品质严选</h3>
+                        <p>延续蒙牛高端乳品标准，精选优质奶源，保留天然乳香，为玩家提供最纯粹的补给能量。</p>
+                    </article>
+                    <article class="feature-card">
+                        <span class="feature-icon">🎁</span>
+                        <h3>限量珍藏</h3>
+                        <p>本次联名产品仅限特定渠道发售，包装采用特殊工艺，极具收藏价值，手慢无。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section products-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>联名限定产品</h2>
+                    <p>以下为本次蒙牛X元神联动的首发产品系列。</p>
+                </div>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-badge">热销</span>
+                            <!-- Placeholder for Milk Box -->
+                            <img src="https://picsum.photos/seed/milk1/300/300" alt="蒙牛纯甄元神限定版">
+                        </div>
+                        <div class="product-info">
+                            <h3>蒙牛纯甄 元神限定版</h3>
+                            <p>0蔗糖配方，添加活性益生菌。包装还原元神角色经典造型。</p>
+                            <div class="product-footer">
+                                <span class="price">¥ 7.00 / 盒</span>
+                                <a href="#" class="buy-btn">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-badge">新品</span>
+                            <!-- Placeholder for Cheese -->
+                            <img src="https://picsum.photos/seed/cheese1/300/300" alt="蒙牛冠益乳元神版">
+                        </div>
+                        <div class="product-info">
+                            <h3>蒙牛冠益乳 元神版</h3>
+                            <p>含双歧杆菌，调节肠道健康。灵感源自元神秘境中的能量源。</p>
+                            <div class="product-footer">
+                                <span class="price">¥ 12.00 / 盒</span>
+                                <a href="#" class="buy-btn">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <span class="product-badge">限量</span>
+                            <!-- Placeholder for Yogurt -->
+                            <img src="https://picsum.photos/seed/yogurt1/300/300" alt="蒙牛优益C 元神限定">
+                        </div>
+                        <div class="product-info">
+                            <h3>蒙牛优益C 元神限定</h3>
+                            <p>每瓶含有10亿活性益生菌，酸甜口感搭配元神冒险主题。</p>
+                            <div class="product-footer">
+                                <span class="price">¥ 9.50 / 盒</span>
+                                <a href="#" class="buy-btn">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section id="story" class="section story-section">
+            <div class="container">
+                <div class="story-container">
+                    <div class="story-image">
+                        <img src="https://picsum.photos/seed/collab/600/400" alt="蒙牛与元神合作概念图">
+                    </div>
+                    <div class="story-content">
+                        <h2>纯粹力量，源自自然</h2>
+                        <p>蒙牛作为中国乳业的领军品牌，始终致力于为消费者提供高品质的乳制品。元神作为现象级国产游戏，承载了无数玩家的热血记忆与探索精神。</p>
+                        <p>此次联名，我们旨在传递“纯粹”与“探索”的品牌内核。无论是蒙牛对奶源地的严苛筛选，还是元神团队对游戏世界的精细打磨，本质上都是对品质的极致追求。</p>
+                        <ul class="story-list">
+                            <li>
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                <span>精选全球优质奶源牧场</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                <span>游戏内专属活动同步开启</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                <span>购买产品可参与游戏内抽奖</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题</h2>
+                    <p>关于蒙牛X元神联动的购买与使用指南。</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            联名产品在哪些渠道可以买到？
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>本次联名产品将在全国各大商超、便利店以及蒙牛官方电商平台旗舰店同步发售，具体上架时间请关注各渠道公告。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            购买产品能获得元神游戏内的什么奖励？
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>购买指定规格的蒙牛X元神联名产品，扫描包装上的专属二维码，即可参与“寻找元神”活动，有机会获得游戏内稀有道具、限定头像框及月卡奖励。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            包装上的二维码有效期是多久？
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        <div class="faq-answer">
+                            <p>包装上的活动二维码自产品生产日期起 6 个月内有效。请尽快扫码参与活动，以免错过兑换机会。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于蒙牛</h4>
+                    <ul>
+                        <li><a href="#">品牌故事</a></li>
+                        <li><a href="#">社会责任</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>元神游戏</h4>
+                    <ul>
+                        <li><a href="#">官方网站</a></li>
+                        <li><a href="#">游戏下载</a></li>
+                        <li><a href="#">玩家社区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">客户服务</a></li>
+                        <li><a href="#">投诉建议</a></li>
+                        <li><a href="#">媒体中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">官方微信公众号</a></li>
+                        <li><a href="#">元神官方社区</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 蒙牛乳业股份有限公司 & 元神工作室. 保留所有权利。</p>
+                <p style="margin-top: 0.5rem; opacity: 0.6;">本页面为概念设计展示，非真实商业落地页。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                              </html>
