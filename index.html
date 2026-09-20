@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="绿意盎然 - 城市生态修复与室内植物养护指南。提供室内绿植推荐、阳台种植教程、自然风格家居搭配及环保生活方式建议，打造您的绿色生活空间。">
+    <meta name="keywords" content="绿意盎然,室内植物,绿植推荐,阳台种植,生态家居,植物养护,园艺指南">
+    <title>绿意盎然 - 城市生态修复与室内植物养护指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-green: #2d6a4f;
+            --secondary-green: #40916c;
+            --light-green: #d8f3dc;
+            --accent-lime: #95d5b2;
+            --bg-cream: #f8f9fa;
+            --text-dark: #1b4332;
+            --text-gray: #52796f;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(45, 106, 79, 0.1), 0 2px 4px -1px rgba(45, 106, 79, 0.06);
+            --radius: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-cream);
+            background-image: radial-gradient(#d8f3dc 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-lime);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-gray);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-green);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-lime);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .btn-cta {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--secondary-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 4rem 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-green);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.1;
+            background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M30 0L60 30L30 60L0 30Z" fill="%232d6a4f"/></svg>');
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+        }
+
+        /* Plant Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(45, 106, 79, 0.15);
+        }
+
+        .card-img-wrapper {
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            border-top: 1px solid #f1f1f1;
+            padding-top: 1rem;
+        }
+
+        /* Guide Section (Split Layout) */
+        .guide-section {
+            background-color: var(--white);
+        }
+
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .guide-image img {
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .guide-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+        }
+
+        .guide-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+        }
+
+        .checklist li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-gray);
+        }
+
+        .checklist li::before {
+            content: '✓';
+            color: var(--secondary-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item h4 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: var(--radius);
+            margin: 4rem auto;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-input {
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            width: 300px;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background-color: var(--accent-lime);
+            color: var(--primary-green);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .newsletter-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: #bdc3c7;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h5 {
+            color: var(--white);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-lime);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                绿意盎然
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#plants" class="active">植物图鉴</a></li>
+                    <li><a href="#guide">养护指南</a></li>
+                    <li><a href="#tips">生活美学</a></li>
+                    <li><a href="#community">社区交流</a></li>
+                </ul>
+            </nav>
+            <a href="#guide" class="btn-cta">开始种植</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container hero-content">
+                <h1>让生活充满<span style="color: var(--secondary-green);">生机</span></h1>
+                <p>无论您身处城市公寓还是乡村庭院，绿意盎然都能为您提供专业的植物选择与养护方案，打造您的专属绿色角落。</p>
+                <div class="hero-buttons">
+                    <a href="#plants" class="btn-cta">浏览推荐植物</a>
+                    <a href="#guide" class="btn-outline">新手养护入门</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plant Categories -->
+        <section id="plants">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门植物推荐</h2>
+                    <p>根据光照与空间，为您精选最适合的绿植伴侣</p>
+                </div>
+                <div class="grid-container">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <span class="card-tag">低维护</span>
+                            <img src="https://picsum.photos/seed/plant1/400/300" alt="龟背竹">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">龟背竹</h3>
+                            <p class="card-desc">经典的室内观叶植物，耐阴性强，叶片造型独特，极具热带风情。</p>
+                            <div class="card-meta">
+                                <span>光照: 半阴</span>
+                                <span>难度: ★☆☆</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <span class="card-tag">净化空气</span>
+                            <img src="https://picsum.photos/seed/plant2/400/300" alt="虎尾兰">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">虎尾兰</h3>
+                            <p class="card-desc">净化甲醛、吸收二氧化碳的能手，十天不浇水也能顽强生存。</p>
+                            <div class="card-meta">
+                                <span>光照: 散光</span>
+                                <span>难度: ★☆☆</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <span class="card-tag">开花植物</span>
+                            <img src="https://picsum.photos/seed/plant3/400/300" alt="蝴蝶兰">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">蝴蝶兰</h3>
+                            <p class="card-desc">花期长，花色艳丽，适合点缀书房或客厅，提升家居格调。</p>
+                            <div class="card-meta">
+                                <span>光照: 明亮散射</span>
+                                <span>难度: ★★☆</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <div class="card-img-wrapper">
+                            <span class="card-tag">多肉植物</span>
+                            <img src="https://picsum.photos/seed/plant4/400/300" alt="多肉组合">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">多肉拼盘</h3>
+                            <p class="card-desc">小巧可爱，造型多变，适合办公桌摆放，治愈心情。</p>
+                            <div class="card-meta">
+                                <span>光照: 充足</span>
+                                <span>难度: ★★☆</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <div class="guide-layout">
+                    <div class="guide-image">
+                        <img src="https://picsum.photos/seed/garden/600/400" alt="家庭阳台花园">
+                    </div>
+                    <div class="guide-content">
+                        <h3>新手家庭种植指南</h3>
+                        <p>想要在家中养好植物，关键在于了解植物的习性并创造合适的环境。即使是新手，也能通过简单的步骤，打造一个充满绿意的空间。</p>
+                        <ul class="checklist">
+                            <li><strong>合理选种：</strong>从耐阴、耐旱的品种开始，如虎尾兰、绿萝。</li>
+                            <li><strong>控制浇水：</strong>遵循"见干见湿"原则，避免盆土长期积水。</li>
+                            <li><strong>定期通风：</strong>保持空气流通，预防病虫害滋生。</li>
+                            <li><strong>适度光照：</strong>了解您所在位置的日照时长，调整植物位置。</li>
+                        </ul>
+                        <a href="#" style="color: var(--primary-green); font-weight: 600; margin-top: 1rem; display: inline-block;">查看完整养护手册 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="tips">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>解决您在植物养护过程中遇到的疑虑</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>植物叶子发黄怎么办？</h4>
+                        <p>通常是因为浇水过多导致根部腐烂，或者是光照过强/过弱。建议检查土壤湿度，并调整摆放位置。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>没有阳台怎么养植物？</h4>
+                        <p>可以选择耐阴植物，如绿萝、常春藤、虎尾兰等，利用室内散射光即可生长良好。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如何判断植物是否需要浇水？</h4>
+                        <p>最简单的方法是插入手指测量土壤湿度，或者使用土壤湿度计。如果土壤表面干燥，通常需要浇水。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <div class="container">
+            <div class="newsletter">
+                <h2>订阅我们的园艺周刊</h2>
+                <p>每周获取最新的植物养护技巧、品种推荐及园艺活动资讯。</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('感谢您的订阅！我们会定期向您发送园艺资讯。');">
+                    <input type="email" class="newsletter-input" placeholder="请输入您的电子邮箱" required>
+                    <button type="submit" class="newsletter-btn">立即订阅</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>绿意盎然</h5>
+                    <p>致力于推广绿色生活方式，让每个人都能轻松拥有属于自己的绿色空间。</p>
+                </div>
+                <div class="footer-col">
+                    <h5>快速链接</h5>
+                    <ul>
+                        <li><a href="#plants">植物图鉴</a></li>
+                        <li><a href="#guide">养护指南</a></li>
+                        <li><a href="#tips">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>关于我们</h5>
+                    <ul>
+                        <li><a href="#">团队介绍</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 绿意盎然. 保留所有权利. 本站内容仅供学习与参考。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
