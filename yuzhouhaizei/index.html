@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="宇宙海贼萨拉-探索宇宙深处的星际冒险与海盗传说。提供萨拉角色图鉴、星际航海路线、海盗公会资讯及宇宙生存指南。">
+    <meta name="keywords" content="宇宙海贼萨拉,星际冒险,宇宙海盗,科幻小说,角色图鉴,星际航海">
+    <title>宇宙海贼萨拉-星际冒险与海盗传说图鉴</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00f2ff;
+            --secondary-color: #ff0055;
+            --bg-dark: #0a0b1e;
+            --bg-card: #13142b;
+            --text-main: #e0e6ed;
+            --text-muted: #94a3b8;
+            --font-main: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 导航栏 */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 11, 30, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 242, 255, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(10, 11, 30, 0.8), rgba(0, 0, 0, 0.9)), 
+                        url('https://picsum.photos/seed/space/1920/1080') no-repeat center center/cover;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, var(--bg-dark) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(90deg, var(--secondary-color), #ff5e00);
+            color: white;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 85, 0.6);
+        }
+
+        /* 通用 Section */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .section-header .divider {
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* 角色图鉴 */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .char-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+        }
+
+        .char-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .char-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            filter: brightness(0.8);
+            transition: filter 0.3s;
+        }
+
+        .char-card:hover .char-img {
+            filter: brightness(1);
+        }
+
+        .char-info {
+            padding: 1.5rem;
+        }
+
+        .char-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .char-role {
+            display: inline-block;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.6rem;
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--primary-color);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .char-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* 星际路线 */
+        .route-section {
+            background: linear-gradient(to bottom, var(--bg-dark), #0f1025);
+        }
+
+        .route-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .route-item {
+            display: flex;
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 1.5rem;
+            align-items: center;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .route-icon {
+            font-size: 2rem;
+            margin-right: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .route-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .route-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* 问答/指南 */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* 页脚 */
+        footer {
+            background: #05060f;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .footer-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            margin: 0 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .route-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .route-icon {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span>★</span> 宇宙海贼萨拉
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#hero">首页</a></li>
+                    <li><a href="#characters">角色图鉴</a></li>
+                    <li><a href="#routes">星际航线</a></li>
+                    <li><a href="#guide">生存指南</a></li>
+                    <li><a href="#about">关于传说</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>在无尽星海中扬帆起航</h1>
+                <p>探索宇宙海贼萨拉的传奇世界。从银河边缘到黑洞深处，这里记录了最狂野的冒险、最复杂的星际政治与最动人的羁绊。</p>
+                <button class="btn" onclick="document.getElementById('characters').scrollIntoView({behavior: 'smooth'})">开始探索</button>
+            </div>
+        </section>
+
+        <!-- Character Gallery -->
+        <section id="characters">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心角色图鉴</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="character-grid">
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/sarah/400/500" alt="萨拉船长" class="char-img">
+                        <div class="char-info">
+                            <h3>萨拉船长</h3>
+                            <span class="char-role">领袖 / 狂战士</span>
+                            <p class="char-desc">传说中唯一驾驶“虚空之刃”号穿越星云的船长。性格狂傲不羁，但极度珍视船员的生命。传说她的左眼能看到过去的残影。</p>
+                        </div>
+                    </article>
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/tech/400/500" alt="机械师艾克斯" class="char-img">
+                        <div class="char-info">
+                            <h3>艾克斯</h3>
+                            <span class="char-role">技术专家</span>
+                            <p class="char-desc">拥有半个机械躯体的前帝国工程师。负责“虚空之刃”号的维护与升级，是萨拉最值得信赖的伙伴。</p>
+                        </div>
+                    </article>
+                    <article class="char-card">
+                        <img src="https://picsum.photos/seed/medic/400/500" alt="医疗官琳" class="char-img">
+                        <div class="char-info">
+                            <h3>琳</h3>
+                            <span class="char-role">医疗官 / 历史学家</span>
+                            <p class="char-desc">来自被遗忘的文明遗迹。掌握着关于古老星际战争的秘密，在战斗中负责掩护与治疗，是团队的定海神针。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Star Routes -->
+        <section id="routes" class="route-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>经典星际航线</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="route-list">
+                    <div class="route-item">
+                        <div class="route-icon">🚀</div>
+                        <div class="route-content">
+                            <h3>猎户座旋臂走私路线</h3>
+                            <p>连接黑市星港与联邦边境的关键航道，沿途充满了海盗伏击与联邦巡逻队的追捕。</p>
+                        </div>
+                    </div>
+                    <div class="route-item">
+                        <div class="route-icon">🌌</div>
+                        <div class="route-content">
+                            <h3>仙女座虫洞出口</h3>
+                            <p>通往未知星域的门户，空间极其不稳定，但那里蕴藏着古代文明遗留的高能矿石。</p>
+                        </div>
+                    </div>
+                    <div class="route-item">
+                        <div class="route-icon">💀</div>
+                        <div class="route-content">
+                            <h3>死亡星云禁区</h3>
+                            <p>充满辐射与陨石的星云，只有经过特殊改装的飞船才能安全穿越，是检验船员勇气的地方。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Survival Guide -->
+        <section id="guide">
+            <div class="container">
+                <div class="section-header">
+                    <h2>宇宙生存指南</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>如何获取星际航行执照？</h4>
+                        <p>在联邦管辖区域，必须通过理论考试与实操驾驶测试。但在海盗星区，通常通过在黑市完成高风险任务来获取“信誉值”，进而获得通行证。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>遭遇海盗拦截该怎么办？</h4>
+                        <p>首先保持冷静，不要轻易开启护盾，以免激怒对方。尝试通过通讯频道进行谈判，或者利用地形优势进行机动规避。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>什么是“虚空共振”现象？</h4>
+                        <p>一种罕见的宇宙物理现象，可能导致飞船系统瘫痪。萨拉船长的左眼似乎与这种共振有某种感应，能提前预警危险。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>在哪里可以兑换星际货币？</h4>
+                        <p>各大星系的自由港、空间站交易所以及部分大型酒馆都支持货币兑换。建议使用加密货币进行大额交易以避免追踪。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2023 宇宙海贼萨拉 - 星际传说数据库</p>
+                <div class="footer-links">
+                    <a href="#">免责声明</a>
+                    <a href="#">隐私协议</a>
+                    <a href="#">联系公会</a>
+                    <a href="#">加入舰队</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
