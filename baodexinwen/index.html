@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="保德新闻网 - 山西保德地区最新资讯门户，提供保德本地新闻、民生热点、政策解读、社会动态及县域发展信息。关注保德新闻，了解家乡变化。">
+    <meta name="keywords" content="保德新闻, 保德资讯, 保德新闻, 山西保德, 保德县, 本地新闻">
+    <title>保德新闻 - 本地资讯与民生热点报道平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f39c12;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f4f6f9;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: var(--header-height);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            font-size: 12px;
+            color: #fff;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            margin-right: 4px;
+        }
+
+        .badge.hot {
+            background-color: #e74c3c;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #f0f2f5;
+            border-radius: 20px;
+            padding: 5px 15px;
+            width: 400px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            flex: 1;
+            padding: 0 10px;
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: 100%;
+            z-index: 900;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-list li {
+            position: relative;
+        }
+
+        .nav-list a {
+            display: block;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-list a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            margin-bottom: 30px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            height: 400px;
+        }
+
+        .hero-main {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .hero-main img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-main:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: #fff;
+        }
+
+        .hero-overlay h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-main-title {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .hero-main-title a {
+            color: #fff;
+        }
+
+        .hero-main-title a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero-sub {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hero-sub-item {
+            flex: 1;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .hero-sub-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-sub-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero-sub-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: #fff;
+        }
+
+        .hero-sub-overlay h3 {
+            font-size: 16px;
+        }
+
+        /* Main Content Layout */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* Article List */
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .article-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s;
+            display: flex;
+            gap: 20px;
+        }
+
+        .article-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .article-img {
+            width: 260px;
+            height: 160px;
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .article-img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .article-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .article-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-meta {
+            margin-top: auto;
+            font-size: 12px;
+            color: #999;
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-white);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .hot-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .hot-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hot-list .rank {
+            color: var(--secondary-color);
+            font-weight: 800;
+            font-size: 18px;
+            margin-right: 10px;
+            width: 25px;
+        }
+
+        .hot-list .rank.top-3 {
+            color: #e74c3c;
+        }
+
+        .hot-list a {
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        .hot-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .ad-space {
+            width: 100%;
+            height: 250px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        /* Focus Section (Video/Feature) */
+        .focus-section {
+            background: var(--bg-white);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 50px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .focus-item {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .focus-item img {
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.3s;
+        }
+
+        .focus-item:hover img {
+            opacity: 0.8;
+        }
+
+        .focus-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: #fff;
+        }
+
+        .focus-info h4 {
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .hero-main {
+                height: 300px;
+            }
+            .hero-sub {
+                flex-direction: row;
+                height: 150px;
+            }
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+            .focus-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .article-card {
+                flex-direction: column;
+            }
+            .article-img {
+                width: 100%;
+                height: 200px;
+            }
+            .search-bar {
+                display: none;
+            }
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-list {
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+            .nav-list a {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-sub {
+                flex-direction: column;
+                height: auto;
+            }
+            .hero-sub-item {
+                height: 200px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>保德新闻</span>网
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索保德新闻、民生热点...">
+                <button type="button">搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">时政要闻</a></li>
+                <li><a href="#">社会民生</a></li>
+                <li><a href="#">经济发展</a></li>
+                <li><a href="#">文化旅游</a></li>
+                <li><a href="#">县域报道</a></li>
+                <li><a href="#">便民服务</a></li>
+                <li><a href="#">视频新闻</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-main">
+                    <img src="https://picsum.photos/seed/bao_de_news_hero/800/400" alt="保德新闻头条">
+                    <div class="hero-overlay">
+                        <span class="badge hot">热门</span>
+                        <h2 class="hero-main-title"><a href="#">保德县召开2024年重点项目推进会 全力冲刺“开门红”</a></h2>
+                        <p>会议强调，要紧盯时间节点，强化要素保障，确保项目早开工、早投产、早见效，为全县经济高质量发展注入强劲动力。</p>
+                    </div>
+                </div>
+                <div class="hero-sub">
+                    <div class="hero-sub-item">
+                        <img src="https://picsum.photos/seed/bao_de_news_sub1/400/200" alt="民生服务">
+                        <div class="hero-sub-overlay">
+                            <h3><a href="#">保德县人民医院门诊大楼正式启用 提升医疗服务水平</a></h3>
+                        </div>
+                    </div>
+                    <div class="hero-sub-item">
+                        <img src="https://picsum.photos/seed/bao_de_news_sub2/400/200" alt="文化旅游">
+                        <div class="hero-sub-overlay">
+                            <h3><a href="#">黄河岸边的“新画卷”：保德黄河生态旅游带建设进展顺利</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Layout -->
+        <div class="content-layout">
+            
+            <!-- Left Column: News Feed -->
+            <div class="main-column">
+                
+                <!-- Latest News -->
+                <section>
+                    <div class="section-title">
+                        <span>最新资讯</span>
+                        <a href="#">查看更多 ></a>
+                    </div>
+
+                    <article class="article-card">
+                        <div class="article-img">
+                            <img src="https://picsum.photos/seed/bao_de_news_1/400/300" alt="新闻配图">
+                        </div>
+                        <div class="article-info">
+                            <h3 class="article-title"><a href="#">保德县开展春季义务植树活动 绿化黄河岸线</a></h3>
+                            <p class="article-excerpt">春风拂面，万物复苏。3月12日，保德县组织机关干部、志愿者及社会各界人士共计500余人，在黄河沿岸开展义务植树活动，为家乡再添一抹新绿。</p>
+                            <div class="article-meta">
+                                <span class="badge">时政</span>
+                                <span>2024-03-15 10:30</span>
+                                <span>来源：保德新闻网</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="article-img">
+                            <img src="https://picsum.photos/seed/bao_de_news_2/400/300" alt="新闻配图">
+                        </div>
+                        <div class="article-info">
+                            <h3 class="article-title"><a href="#">交通优化！保德县新增两条公交线路 解决群众出行难</a></h3>
+                            <p class="article-excerpt">为进一步方便市民出行，提升公共交通服务水平，保德县交通运输局近期新增了2条公交线路，并优化了部分线路的发车时间，有效缓解了高峰时段的拥堵情况。</p>
+                            <div class="article-meta">
+                                <span class="badge">民生</span>
+                                <span>2024-03-14 16:45</span>
+                                <span>来源：保德新闻网</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="article-img">
+                            <img src="https://picsum.photos/seed/bao_de_news_3/400/300" alt="新闻配图">
+                        </div>
+                        <div class="article-info">
+                            <h3 class="article-title"><a href="#">喜讯！保德县一项目入选省级乡村振兴示范案例</a></h3>
+                            <p class="article-excerpt">近日，山西省乡村振兴局公布了2023年度省级乡村振兴示范创建名单，保德县某乡村产业发展项目凭借其独特的运营模式和显著的经济效益成功入选。</p>
+                            <div class="article-meta">
+                                <span class="badge">经济</span>
+                                <span>2024-03-14 09:20</span>
+                                <span>来源：保德新闻网</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="article-img">
+                            <img src="https://picsum.photos/seed/bao_de_news_4/400/300" alt="新闻配图">
+                        </div>
+                        <div class="article-info">
+                            <h3 class="article-title"><a href="#">安全检查进行时：保德县市场监管局开展节前食品安全专项检查</a></h3>
+                            <p class="article-excerpt">为保障人民群众“舌尖上的安全”，连日来，保德县市场监督管理局执法人员深入辖区各大超市、农贸市场及餐饮单位，对食品生产经营单位进行拉网式排查。</p>
+                            <div class="article-meta">
+                                <span class="badge">社会</span>
+                                <span>2024-03-13 14:15</span>
+                                <span>来源：保德新闻网</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <div class="article-img">
+                            <img src="https://picsum.photos/seed/bao_de_news_5/400/300" alt="新闻配图">
+                        </div>
+                        <div class="article-info">
+                            <h3 class="article-title"><a href="#">教育动态：保德县实验中学举办首届校园科技节</a></h3>
+                            <p class="article-excerpt">为培养学生的创新精神和实践能力，丰富校园文化生活，保德县实验中学近日举办了以“探索科技奥秘，点亮智慧人生”为主题的首届校园科技节。</p>
+                            <div class="article-meta">
+                                <span class="badge">教育</span>
+                                <span>2024-03-13 11:00</span>
+                                <span>来源：保德新闻网</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </section>
+
+                <!-- Video Focus -->
+                <section class="focus-section">
+                    <div class="section-title">
+                        <span>视频新闻</span>
+                        <a href="#">进入视频库 ></a>
+                    </div>
+                    <div class="focus-grid">
+                        <div class="focus-item">
+                            <img src="https://picsum.photos/seed/video1/400/225" alt="视频缩略图">
+                            <div class="focus-info">
+                                <h4>保德县2024年春季招聘会现场直击</h4>
+                            </div>
+                        </div>
+                        <div class="focus-item">
+                            <img src="https://picsum.photos/seed/video2/400/225" alt="视频缩略图">
+                            <div class="focus-info">
+                                <h4>黄河岸边的春耕备耕景象</h4>
+                            </div>
+                        </div>
+                        <div class="focus-item">
+                            <img src="https://picsum.photos/seed/video3/400/225" alt="视频缩略图">
+                            <div class="focus-info">
+                                <h4>非遗传承人展示保德剪纸艺术</h4>
+                            </div>
+                        </div>
+                        <div class="focus-item">
+                            <img src="https://picsum.photos/seed/video4/400/225" alt="视频缩略图">
+                            <div class="focus-info">
+                                <h4>城市更新：保德老旧小区改造见成效</h4>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="sidebar">
+                
+                <!-- Hot Ranking -->
+                <div class="sidebar-widget">
+                    <div class="section-title">
+                        <span>24小时热榜</span>
+                    </div>
+                    <ul class="hot-list">
+                        <li><span class="rank top-3">1</span><a href="#">保德县：推进黄河流域生态保护和高质量发展综述</a></li>
+                        <li><span class="rank top-3">2</span><a href="#">保德县2024年民生实事项目出炉，涉及教育医疗交通</a></li>
+                        <li><span class="rank top-3">3</span><a href="#">春节期间保德县市场供应充足，物价运行平稳</a></li>
+                        <li><span class="rank">4</span><a href="#">保德交警发布“两公布一提示” 安全文明出行</a></li>
+                        <li><span class="rank">5</span><a href="#">我县举办“春风行动”大型招聘会 3000余岗位待聘</a></li>
+                        <li><span class="rank">6</span><a href="#">保德县启动春季重大动物疫病集中免疫工作</a></li>
+                        <li><span class="rank">7</span><a href="#">关于规范保德县城区停车秩序的通告</a></li>
+                        <li><span class="rank">8</span><a href="#">我县成功举办“黄河情·家乡美”摄影展</a></li>
+                    </ul>
+                </div>
+
+                <!-- Advertisement Space -->
+                <div class="ad-space">
+                    广告位
+                </div>
+
+                <!-- Quick Links -->
+                <div class="sidebar-widget">
+                    <div class="section-title">
+                        <span>便民服务</span>
+                    </div>
+                    <ul class="hot-list">
+                        <li><a href="#">保德县政务服务中心</a></li>
+                        <li><a href="#">保德县气象局</a></li>
+                        <li><a href="#">保德县教育局</a></li>
+                        <li><a href="#">保德县医疗保障局</a></li>
+                        <li><a href="#">保德县交通运输局</a></li>
+                    </ul>
+                </div>
+
+                <!-- District News -->
+                <div class="sidebar-widget">
+                    <div class="section-title">
+                        <span>乡镇动态</span>
+                    </div>
+                    <ul class="hot-list">
+                        <li><a href="#">林遮峪乡：大棚蔬菜长势喜人 丰产丰收在望</a></li>
+                        <li><a href="#">桥头镇：老旧小区改造惠民生 居民幸福指数提升</a></li>
+                        <li><a href="#">义门镇：开展农村人居环境整治提升行动</a></li>
+                        <li><a href="#">薛村镇：招商引资再发力 项目建设谱新篇</a></li>
+                    </ul>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">保德新闻网</div>
+                    <p>保德新闻网是保德县最具影响力的综合性新闻门户网站，致力于为全县人民提供及时、准确、全面的新闻资讯服务。</p>
+                    <p style="margin-top: 10px; color: #7f8c8d;">地址：山西省忻州市保德县向阳路XX号 | 邮编：036600</p>
+                </div>
+                <div class="footer-col">
+                    <h4>新闻频道</h4>
+                    <ul>
+                        <li><a href="#">时政要闻</a></li>
+                        <li><a href="#">社会民生</a></li>
+                        <li><a href="#">经济发展</a></li>
+                        <li><a href="#">文化旅游</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>专题专栏</h4>
+                    <ul>
+                        <li><a href="#">乡村振兴</a></li>
+                        <li><a href="#">黄河生态</a></li>
+                        <li><a href="#">文明城市创建</a></li>
+                        <li><a href="#">优化营商环境</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>投稿邮箱：news@baode.com</li>
+                        <li>联系电话：0350-1234567</li>
+                        <li>违法和不良信息举报电话：0350-8765432</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 保德新闻网 版权所有 | 互联网新闻信息服务许可证：[晋]非经营性[2024]XXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                                       </html>
